@@ -17,7 +17,7 @@ public class Game {
         while (running){
             board.setStone(inputhandler.userColumn());
             board.printBoard();
-            if (board.boardFull(inputhandler.getInputColumn())){ //hier ist der Fehler -> es wird hier nochmal nach einer eingabe gefragt anstatt das ergebnis zu nutzen
+            if (board.boardFull(inputhandler.getInputColumn())){
                 running = false;
             }
         }
