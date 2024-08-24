@@ -2,12 +2,22 @@ package Viergewinnt.model;
 
 public class Board {
 
+    private Player player;
     private String[][] Board = new String[6][7];
+
+    public Board(){
+        this.player = new Player();
+    }
 
     public void setStone(int inputColumn){
         for (int i = Board.length -1; i >= 0; i--) {
-            if (Board[i][inputColumn] == null){
+            if (Board[i][inputColumn] == null && player.getPlayer1Turn()){
                 Board[i][inputColumn] = "X";
+                player.setPlayer1Turn(false);
+                break;
+            } else if (Board[i][inputColumn] == null && !player.getPlayer1Turn()) {
+                Board[i][inputColumn] = "O";
+                player.setPlayer1Turn(true);
                 break;
             }
         }
