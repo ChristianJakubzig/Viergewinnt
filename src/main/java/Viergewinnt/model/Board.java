@@ -3,7 +3,6 @@ package Viergewinnt.model;
 public class Board {
 
     private Player player;
-    private int column = 0;
     private final String[][] Board = new String[6][7];
 
     public Board() {
@@ -34,12 +33,22 @@ public class Board {
     }
 
     public Boolean winningCondition() {
-        for (int i = 0; i < Board.length; i++) {
-            for (int j = 0; j <= Board[i].length - 4; j++) {
+        for (int i = 0; i <= Board.length - 4; i++) {
+            for (int j = 0; j < Board[i].length; j++) {
                 if (Board[i][j] != null &&
                         Board[i][j].equals(Board[i + 1][j]) &&
                         Board[i][j].equals(Board[i + 2][j]) &&
-                        Board[i][j].equals(Board[i + 3][j])){
+                        Board[i][j].equals(Board[i + 3][j])) {
+                    return true;
+                }
+            }
+        }
+        for (int i = 0; i < Board.length; i++) {
+            for (int j = 0; j < Board[i].length - 4; j++) {
+                if (Board[i][j] != null &&
+                        Board[i][j].equals(Board[i][j + 1]) &&
+                        Board[i][j].equals(Board[i][j + 2]) &&
+                        Board[i][j].equals(Board[i][j + 3])) {
                     return true;
                 }
             }
