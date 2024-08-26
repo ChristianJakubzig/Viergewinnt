@@ -17,6 +17,10 @@ public class Game {
         while (running) {
             board.setStone(inputhandler.userColumn());
             board.printBoard();
+            if (board.winningCondition()){
+                System.out.println("winner winner chicken dinner!");
+                running = false;
+            }
             if (board.boardFull(inputhandler.getInputColumn())) {
                 running = false;
             }
