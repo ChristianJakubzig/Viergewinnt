@@ -53,6 +53,26 @@ public class Board {
                 }
             }
         }
+        for (int i = 0; i <= Board.length - 4; i++) {
+            for (int j = 0; j <= Board[i].length - 4; j++) {
+                if (Board[i][j] != null &&
+                        Board[i][j].equals(Board[i + 1][j + 1]) &&
+                        Board[i][j].equals(Board[i + 2][j + 2]) &&
+                        Board[i][j].equals(Board[i + 3][j + 3])) {
+                    return true;
+                }
+            }
+        }
+        for (int i = 0; i <= Board.length - 4; i++) {
+            for (int j = 3; j < Board[i].length; j++) {
+                if (Board[i][j] != null &&
+                        Board[i][j].equals(Board[i + 1][j - 1]) &&
+                        Board[i][j].equals(Board[i + 2][j - 2]) &&
+                        Board[i][j].equals(Board[i + 3][j - 3])) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
