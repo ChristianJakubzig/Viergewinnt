@@ -23,7 +23,7 @@ public class Board {
         }
     }
 
-    public Boolean boardFull(int inputColumn) {
+    public boolean boardFull(int inputColumn) {
         for (int i = 0; i < Board[0].length; i++) {
             if (Board[0][i] == null){
                 return false;
@@ -32,7 +32,7 @@ public class Board {
         return true;
     }
 
-    public Boolean winningCondition() {
+    public boolean winningCondition() {
         for (int i = 0; i <= Board.length - 4; i++) {
             for (int j = 0; j < Board[i].length; j++) {
                 if (Board[i][j] != null &&
