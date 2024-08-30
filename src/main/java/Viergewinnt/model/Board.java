@@ -24,12 +24,12 @@ public class Board {
     }
 
     public Boolean boardFull(int inputColumn) {
-        for (int i = Board.length - 1; i >= 0; i--) {
-            if (Board[0][inputColumn] != null) {
-                return true;
+        for (int i = 0; i < Board[0].length; i++) {
+            if (Board[0][i] == null){
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public Boolean winningCondition() {
